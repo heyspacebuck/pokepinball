@@ -353,7 +353,7 @@ VBlank: ; 0x2f2
 	ld a, $4
 	ld [rTAC], a ; Timer interrupt will fire ~60 times per second
 .skipTimerToggle
-	ld hl, MBC5SRamBank
+	ld hl, $ff01 ; original: ld hl, MBC5SRamBank
 	ld a, [wd917]
 	and a
 	jr nz, .asm_3b5
